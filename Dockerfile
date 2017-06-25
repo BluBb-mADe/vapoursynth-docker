@@ -5,34 +5,34 @@ WORKDIR /
 RUN tail /etc/apk/repositories -n 1|sed s/community/testing/>>/etc/apk/repositories && \
   BUILD_DEPS='\
     autoconf\
-	automake\
-	libtool\
-	git\
-	python3-dev\
-	lcms2-dev\
-	imagemagick-dev\
-	tesseract-ocr-dev\
-	coreutils\
-	build-base\
-	curl\
-	nasm\
-	tar\
-	bzip2\
-	zlib-dev\
-	openssl-dev\
-	yasm-dev\
-	lame-dev\
-	libogg-dev\
-	x264-dev\
-	x265-dev\
-	libvpx-dev\
-	libvorbis-dev\
-	fdk-aac-dev\
-	freetype-dev\
-	libass-dev\
-	libwebp-dev\
-	libtheora-dev\
-	opus-dev' && \
+    automake\
+    libtool\
+    git\
+    python3-dev\
+    lcms2-dev\
+    imagemagick-dev\
+    tesseract-ocr-dev\
+    coreutils\
+    build-base\
+    curl\
+    nasm\
+    tar\
+    bzip2\
+    zlib-dev\
+    openssl-dev\
+    yasm-dev\
+    lame-dev\
+    libogg-dev\
+    x264-dev\
+    x265-dev\
+    libvpx-dev\
+    libvorbis-dev\
+    fdk-aac-dev\
+    freetype-dev\
+    libass-dev\
+    libwebp-dev\
+    libtheora-dev\
+    opus-dev' && \
   apk add --no-cache --update $BUILD_DEPS python3 libtheora libwebp opus libass freetype x265 x264-libs lame libvorbis libvpx openssl fdk-aac&& \
   pip3 install cython && \
   DIR=$(mktemp -d) && cd ${DIR} && \
